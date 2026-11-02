@@ -1,0 +1,31 @@
+HTTP/1.0 200 OK
+Content-Security-Policy: default-src 'self'; script-src 'nonce-2GxcpgHgXvxZfncpqg6slY'; style-src * 'unsafe-inline'; frame-src 'self'; img-src * data: blob:; font-src * data:; media-src 'self'; connect-src 'self' ws: wss:; object-src 'none'; base-uri 'self';
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: no-referrer
+Date: Mon, 02 Nov 2026 15:25:30 GMT
+Content-Length: 776
+
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="referrer" content="no-referrer">
+	<meta name="robots" content="noindex, nofollow, noarchive">
+	<link rel="icon" href="/favicon.svg">
+	<title>Mailpit</title>
+	<link rel=stylesheet href="/dist/app.css?v1.33.0">
+</head>
+
+<body class="h-100">
+	<div class="container-fluid h-100 d-flex flex-column" id="app" data-webroot="/" data-version="v1.33.0">
+		<noscript class="alert alert-warning position-absolute top-50 start-50 translate-middle">
+			You need a browser with JavaScript enabled to use Mailpit
+		</noscript>
+	</div>
+
+	<script src="/dist/app.js?v1.33.0" nonce="2GxcpgHgXvxZfncpqg6slY"></script>
+</body>
+
+</html>

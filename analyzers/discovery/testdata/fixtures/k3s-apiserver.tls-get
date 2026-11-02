@@ -1,0 +1,8 @@
+HTTP/1.0 401 Unauthorized
+Audit-Id: 319f4705-357d-4f08-9db6-9592fa2ee9ac
+Cache-Control: no-cache, private
+Content-Type: application/json
+Date: Mon, 02 Nov 2026 15:25:52 GMT
+Content-Length: 129
+
+{"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"Unauthorized","reason":"Unauthorized","code":401}

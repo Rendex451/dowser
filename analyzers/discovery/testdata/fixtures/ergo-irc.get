@@ -1,0 +1,2 @@
+:ergo.test 400 GET :This is not an HTTP server
+ERROR :Connection closed

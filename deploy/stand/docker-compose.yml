@@ -1,0 +1,42 @@
+name: dowser-stand
+
+networks:
+  lab:
+    ipam:
+      config:
+        - subnet: 172.30.99.0/28
+
+services:
+  ssh-nonstandard:
+    image: linuxserver/openssh-server:latest
+    environment: [PUID=1000, PGID=1000, USER_NAME=audit]
+    networks: { lab: { ipv4_address: 172.30.99.2 } }
+
+  http-standard:
+    image: nginx:1.27-alpine
+    networks: { lab: { ipv4_address: 172.30.99.3 } }
+
+  http-nonstandard:
+    image: nginx:1.27-alpine
+    command: sh -c "sed -i 's/listen  *80;/listen 8081;/; s/listen  *\[::\]:80;/listen [::]:8081;/' /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"
+    networks: { lab: { ipv4_address: 172.30.99.4 } }
+
+  telnet-nonstandard:
+    image: alpine:3.20
+    command: sh -c "apk add --no-cache busybox-extras >/dev/null && exec telnetd -F -p 2323 -l /bin/sh"
+    networks: { lab: { ipv4_address: 172.30.99.5 } }
+
+  redis-standard:
+    image: redis:7-alpine
+    networks: { lab: { ipv4_address: 172.30.99.6 } }
+
+  ftp-standard:
+    image: delfer/alpine-ftp-server:latest
+    environment: [USERS=audit|audit]
+    networks: { lab: { ipv4_address: 172.30.99.7 } }
+
+  mariadb-nonstandard:
+    image: mariadb:11
+    command: --port=13306
+    environment: [MARIADB_ROOT_PASSWORD=audit]
+    networks: { lab: { ipv4_address: 172.30.99.8 } }
