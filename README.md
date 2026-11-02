@@ -82,7 +82,5 @@ go test -race ./...
 
 Гексагональная архитектура: чистое ядро `core`, оркестратор `engine`,
 сменные анализаторы в `analyzers/`, хранилище `store`, вход — `cli`, сборка —
-`cmd/dowser`. Подробно — в [ARCHITECTURE.md](ARCHITECTURE.md).
-
-Разработка идёт по модели kickoff → feature → task, см.
-[AGENTS.md](AGENTS.md) и `features/`.
+`cmd/dowser`. Подробно — в [ARCHITECTURE.md](ARCHITECTURE.md), план работ —
+в `features/`.
